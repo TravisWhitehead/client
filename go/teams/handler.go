@@ -575,6 +575,9 @@ func HandleTeamSeitan(ctx context.Context, g *libkb.GlobalContext, msg keybase1.
 
 	var chats []chatSeitanRecip
 	tx := CreateAddMemberTx(team)
+	// Only allow crypto-members added through 'team.change_membership' to be
+	// added for Seitan invites.
+	tx.NoPUKless = true
 
 	for _, seitan := range msg.Seitans {
 		inviteMD, found := team.chain().FindActiveInviteMDByID(seitan.InviteID)
