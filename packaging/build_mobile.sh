@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 
 gopath=${GOPATH:-}
-client_dir="$gopath/src/github.com/keybase/client"
+client_dir="$gopath/src/${GO_IMPORT_PATH:-github.com/keybase/client}"
 
 "$client_dir/packaging/slack/send.sh" "Starting Android build"
 "$client_dir/packaging/android/build_and_publish.sh"

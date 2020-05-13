@@ -4,10 +4,10 @@ set -eE -u -o pipefail # Fail on error, call ERR trap
 
 automated_build=${AUTOMATED_BUILD:-}
 gopath=${GOPATH:-}
-kbfs_dir="$gopath/src/github.com/keybase/client/go/kbfs"
-client_dir="$gopath/src/github.com/keybase/client"
-shared_dir="$gopath/src/github.com/keybase/client/shared"
-ios_dir="$gopath/src/github.com/keybase/client/shared/ios"
+kbfs_dir="$gopath/src/${GO_IMPORT_PATH:-github.com/keybase/client}/go/kbfs"
+client_dir="$gopath/src/${GO_IMPORT_PATH:-github.com/keybase/client}"
+shared_dir="$gopath/src/${GO_IMPORT_PATH:-github.com/keybase/client}/shared"
+ios_dir="$gopath/src/${GO_IMPORT_PATH:-github.com/keybase/client}/shared/ios"
 clean=${CLEAN:-}
 cache_npm=${CACHE_NPM:-}
 cache_go_lib=${CACHE_GO_LIB:-}
