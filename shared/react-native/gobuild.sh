@@ -65,7 +65,7 @@ gomobileinit ()
   go install golang.org/x/mobile/cmd/{gomobile,gobind}
   echo "Doing gomobile init"
   if [ "$arg" = "android" ]; then
-    gomobile init -ndk $ANDROID_HOME/ndk-bundle
+    gomobile init -ndk ${ANDROID_NDK_HOME:-$ANDROID_HOME/ndk-bundle}
   else
     gomobile init
   fi
